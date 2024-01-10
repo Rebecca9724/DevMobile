@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    height: 100vh;
+    background-color: #775e74;
+    background-image: linear-gradient(to bottom, #aa9da8 0%, #E4E4E4 51%);
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+}
+
+.app {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 225px;
+    height: 50px;
+    text-align: center;
+    background: url(../img/logo.png) no-repeat center top;
+    padding: 180px 0 0 0;
+    margin: -115px 0 0 -112px;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
+    .app {
+        background-position: left center;
+        padding: 75px 0 75px 170px;
+        margin: -90px 0 0 -198px;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    overflow: visible;
+    text-align: center;
+}
+
+.event {
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0 30px;
+    padding: 2px 0;
+}
+
+.event.listening {
+    background-color: #333333;
+}
+
+.event.received {
+    background-color: #4B946A;
+    display: none;
+}
+
+#deviceready.ready .event.listening { display: none; }
+#deviceready.ready .event.received { display: block; }
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-image: linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
+    }
+}

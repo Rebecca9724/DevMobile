@@ -1,0 +1,16 @@
+label{
+    text-align: center;
+    text-decoration: tomato;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+div{
+    color : blueviolet;
+}
+.data-role{
+    color :blueviolet;
+    
+}
